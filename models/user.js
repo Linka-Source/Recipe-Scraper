@@ -9,9 +9,15 @@ class User extends Model {
     }
 }
 
-// Remember id, created_date, updated_date columns are created for you.
+// Creates fields/columns for User model
 User.init(
     {
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true
+        },
         email: {
             type: DataTypes.STRING,
             allowNull: false,
