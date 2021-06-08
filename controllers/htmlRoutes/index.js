@@ -55,4 +55,17 @@ router.get('/dashboard', withAuth, (req, res) => {
     });
 });
 
+// Here we've add our isAuthenticated middleware to this route.
+// If a user who is not logged in tries to access this route they will be redirected to the signup page
+router.get('/recipe', (req, res) => {
+    console.log(req.session.user)
+    res.render('recipe', {
+        user: req.session.user,
+        loggedIn: req.session.loggedIn,
+        recipe: {
+            name: 'Recipe Name'
+        }
+    });
+});
+
 module.exports = router;
