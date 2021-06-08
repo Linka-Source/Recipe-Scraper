@@ -12,12 +12,6 @@ class User extends Model {
 // Creates fields/columns for User model
 User.init(
     {
-        id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            primaryKey: true,
-            autoIncrement: true
-        },
         email: {
             type: DataTypes.STRING,
             allowNull: false,

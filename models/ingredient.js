@@ -7,39 +7,20 @@ class Ingredient extends Model {}
 
 // Creates fields/columns for Ingredient model
 Ingredient.init(
-  {
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true
+    {
+        name: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            // unique: true
+        },
     },
-    tags: {
-      type: DataTypes.STRING,
-      allowNull: true
-    },
-    category_id: {
-        type: DataTypes.INTEGER,
-        references: {
-        model: 'category',
-        key: 'id',
-        }
-    },
-    recipe_id: {
-        type: DataTypes.INTEGER,
-        references: {
-        model: 'recipe',
-        key: 'id',
-        }
-    },
-  },
-  {
-    sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'ingredient',
-  }
+    {
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'ingredient',
+    }
 );
 
 module.exports = Ingredient;
