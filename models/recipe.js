@@ -7,43 +7,42 @@ class Recipe extends Model {}
 
 // Creates fields/columns for Recipe model
 Recipe.init(
-  {
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true
+    {
+        name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        url: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        image: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        description: {
+            type: DataTypes.TEXT,
+            allowNull: false,
+        },
+        instructions: {
+            type: DataTypes.TEXT,
+            allowNull: false,
+        },
+        serving_size: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
+        cook_time: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
     },
-    recipe_title: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    URL_text: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
-    category_id: {
-        type: DataTypes.INTEGER,
-        references: {
-        model: 'category',
-        key: 'id',
-        }
-    }, 
-    user_id: {
-        type: DataTypes.INTEGER,
-        references: {
-        model: 'user',
-        key: 'id',
-        }
+    {
+        sequelize,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'recipe',
     }
-  },
-  {
-    sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'recipe',
-  }
 );
 
 module.exports = Recipe;
