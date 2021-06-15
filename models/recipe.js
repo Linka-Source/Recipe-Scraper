@@ -8,7 +8,7 @@ class Recipe extends Model {}
 // Creates fields/columns for Recipe model
 Recipe.init(
     {
-        name: {
+        title: {
             type: DataTypes.STRING,
             allowNull: false,
         },
