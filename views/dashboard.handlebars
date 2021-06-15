@@ -1,32 +1,30 @@
 <div class="container">
     <div class="flex justify-center">
-        <div class="w-full md:w-1/2">
-            <h2>Your Accout: <span class="member-name">{{user.name}}</span></h2>
-            <p>Your details:</p>
+        <div class="w-full">
             <ul>
-                <li>Name: {{user.name}}</li>
+                <li class="title mt-6">Name: {{user.name}}</li>
             </ul>
         </div>
     </div>
 </div>
 
-<section>
-  <h2>Your Recipes</h2>
+<section class= "container card-container">
+  <h2 class= "title is-3 mt-6">Your Recipes</h2>
   <ol>
     {{#each recipes as |recipe|}}
     <ul>
-      <article class="recipe">
-    <div class="recipe-name">
-       <a href="/recipe/{{recipe.id}}">{{recipe.name}}</a>
-    </div>
-    <div class="meta">
-        <strong>Posted by {{user.name}} on {{format_date recipe.created_at}}</strong>
-    </div>
+      <article class="card mt-6">
     <div>
+       <a class= "btn mt-2 create-txt" href="/recipe/{{recipe.id}}">{{recipe.name}}</a>
+    </div>
+    <div class="card-content">
+        <strong class= "mt-2">Posted by {{user.name}} on {{format_date recipe.created_at}}</strong>
+    </div>
+    <div class="card-image">
       <img src="{{recipe.image}}">
     </div>
-    </article>
-      <a href="/dashboard/edit/{{recipe.id}}" class="edit-recipe">Edit recipe</a>
+      {{!-- <a href="/dashboard/edit/{{recipe.id}}" class="edit-recipe">Edit recipe</a> --}}
+      </article>
     </ul>
     {{/each}}
   </ol>
@@ -34,6 +32,8 @@
 
 
 <div>
-    <button type="submit"><a href="/api/recipe/add" class="create-btn">Create New Recipe</a></button>
+    <button class= "btn" type="submit"><a href="/api/recipe/add" class="create-txt">Create New Recipe</a></button>
 </div>
+
+       
 
