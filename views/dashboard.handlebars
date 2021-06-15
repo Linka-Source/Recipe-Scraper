@@ -1,39 +1,47 @@
 <div class="container">
-    <div class="flex justify-center">
-        <div class="w-full">
-            <ul>
-                <li class="title mt-6">Name: {{user.name}}</li>
-            </ul>
-        </div>
+  <div class="flex justify-center">
+    <div class="w-full">
+      <ul>
+        <li class="title mt-6">Name: {{user.name}}</li>
+      </ul>
     </div>
+  </div>
 </div>
 
-<section class= "container card-container">
-  <h2 class= "title is-3 mt-6">Your Recipes</h2>
-  <ol>
+<section class="container">
+  <h2 class="title mt-6">Your Recipes</h2>
+  <div class="columns">
     {{#each recipes as |recipe|}}
-    <ul>
-      <article class="card mt-6">
-    <div>
-       <a class= "btn mt-2 create-txt" href="/recipe/{{recipe.id}}">{{recipe.name}}</a>
-    </div>
-    <div class="card-content">
-        <strong class= "mt-2">Posted by {{user.name}} on {{format_date recipe.created_at}}</strong>
-    </div>
-    <div class="card-image">
-      <img src="{{recipe.image}}">
-    </div>
-      {{!-- <a href="/dashboard/edit/{{recipe.id}}" class="edit-recipe">Edit recipe</a> --}}
-      </article>
-    </ul>
+
+    <a class="card column" href="/recipe/{{recipe.id}}">
+      <div class="card-image">
+        <figure class="image is-4by3">
+          <img src="{{recipe.image}}" alt="{{recipe.name}}">
+        </figure>
+      </div>
+      <div class="card-content">
+        <div class="media">
+          <div class="media-content">
+            <p class="title is-4">{{user.name}}</p>
+            <p class="subtitle is-6">something</p>
+          </div>
+        </div>
+
+        <div class="content">
+          <h2>{{recipe.name}}</h2>
+          <p>{{recipe.description}}</p>
+          <br>
+          <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+        </div>
+      </div>
+    </a>
+
+
     {{/each}}
-  </ol>
+  </div>
 </section>
 
 
 <div>
-    <button class= "btn" type="submit"><a href="/api/recipe/add" class="create-txt">Create New Recipe</a></button>
+  <button class="btn" type="submit"><a href="/api/recipe/add" class="create-txt">Create New Recipe</a></button>
 </div>
-
-       
-
