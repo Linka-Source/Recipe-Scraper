@@ -69,9 +69,9 @@ router.get('/dashboard', (req, res) => {
             },
             {
                 id: 2,
-                name: 'Classic ratatouille',
+                name: 'Standard bowl of awesome',
                 url: 'https://www.jamieoliver.com/recipes/vegetables-recipes/classic-ratatouille/',
-                image: 'https://prods3.imgix.net/images/articles/2015_08/Web-Article-Updated-Ratatouille-Recipe-French-Tomato-Zucchini-Eggplant-Casserole-with-Thyme-Onion-Summer-Entertaining-Recipe.jpg?auto=format%2Ccompress&dpr=1.25&ixjsv=2.2.3&q=75&w=750',
+                image: 'http://cdn.cnn.com/cnnnext/dam/assets/170913132520-pho.jpg',
                 ingredients:
                     'Ingredients: 2 red onions, 4 cloves of garlic, 2 aubergines, 3 courgettes, 3 red or yellow peppers, 6 ripe tomatoes, ½ a bunch of fresh basil , (15g), olive oil, a few sprigs of fresh thyme, 1 x 400 g tin of quality plum tomatoes, 1 tablespoon balsamic vinegar, ½ a lemon',
                 cook_time: 'Cook time: 1 HOUR 15 MINUTES',
