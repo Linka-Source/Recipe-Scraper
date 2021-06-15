@@ -36,6 +36,13 @@ Recipe.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        category_id: {
+            type: DataTypes.STRING,
+            references: {
+                model: 'category',
+                key: 'id',
+            },
+        },
     },
     {
         sequelize,
