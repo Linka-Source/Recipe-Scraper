@@ -21,12 +21,21 @@ const newFormHandler = async (event) => {
         },
     });
 
+    // import the module
+    const recipeScraper = require('recipe-scraper');
+    // enter a supported recipe url as a parameter - returns a promise
+    async function scrapeRecipe() {
+        let = await recipeScraper(recipeURL);
+        console.log(recipeData);
+    }
+    scrapeRecipe();
+
     if (response.ok) {
         // If successful, redirect the browser to the dashboard page
-        document.location.replace('/dashboard/');
+        document.location.replace('/dashboard');
     } else {
         alert(response.statusText);
     }
 };
 
-document.querySelector('.new-post-form').addEventListener('submit', newFormHandler);
+document.querySelector('.recipeAdd-form').addEventListener('submit', newFormHandler);
