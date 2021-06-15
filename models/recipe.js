@@ -8,8 +8,20 @@ class Recipe extends Model {}
 // Creates fields/columns for Recipe model
 Recipe.init(
     {
-        title: {
+        name: {
             type: DataTypes.STRING,
+            allowNull: false,
+        },
+        description: {
+            type: DataTypes.TEXT,
+            allowNull: false,
+        },
+        ingredients: {
+            type: DataTypes.TEXT,
+            allowNull: false,
+        },
+        instructions: {
+            type: DataTypes.TEXT,
             allowNull: false,
         },
         url: {
@@ -18,14 +30,6 @@ Recipe.init(
         },
         image: {
             type: DataTypes.STRING,
-            allowNull: false,
-        },
-        description: {
-            type: DataTypes.TEXT,
-            allowNull: false,
-        },
-        instructions: {
-            type: DataTypes.TEXT,
             allowNull: false,
         },
         serving_size: {
