@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const recipeScraper = require('recipe-scraper');
 const withAuth = require('../../utils/withAuth');
 const { User, Category, Recipe, Ingredient, Tag } = require('../../models');
 
@@ -29,12 +30,51 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/add', withAuth, (req, res) => {
-    console.log(req.session.user);
-    res.render('recipeAdd', {
-        user: req.session.user,
-        loggedIn: req.session.loggedIn,
-    });
+router.post('/add', async (req, res) => {
+    const cat = req.body.category;
+    console.log('here');
+    var recipeData = null;
+    // enter a supported recipe url as a parameter - returns a promise
+    try {
+        recipeData = await recipeScraper(req.body.recipeUrl);
+        console.log(recipeData);
+
+        // save recipe data to model here.
+        // Recipe.create({
+        //     name: recipeData.name,
+        //     description: recipeData.description,
+        //     ingredients: recipeData.ingredients,
+        //     instructions: recipeData.instructions,
+        //     url: req.body.recipeUrl,
+        //     image: recipeData.image,
+        //     serving_size: recipeData.servings,
+        //     cook_time: recipeData.time.cook,
+        // })
+        //     .then((recipeData) => res.json(recipeData))
+        //     .catch((err) => {
+        //         console.log(err);
+        //         res.status(500).json(err);
+        //     });
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+
+    Recipe.create({
+        name: recipeData.name,
+        description: recipeData.description,
+        ingredients: JSON.stringify(recipeData.ingredients),
+        instructions: JSON.stringify(recipeData.instructions),
+        url: req.body.recipeUrl,
+        image: recipeData.image,
+        serving_size: recipeData.servings,
+        cook_time: recipeData.time.cook,
+    })
+        .then((recipeData) => res.json(recipeData))
+        .catch((err) => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 });
 
 module.exports = router;
