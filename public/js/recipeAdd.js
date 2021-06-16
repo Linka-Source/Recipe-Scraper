@@ -10,7 +10,7 @@ const newFormHandler = async (event) => {
         return;
     }
     // Send a POST request to the API endpoint
-    const response = await fetch(`/api/recipes/add`, {
+    const response = await fetch(`/api/recipe/add`, {
         method: 'POST',
         body: JSON.stringify({
             category,
