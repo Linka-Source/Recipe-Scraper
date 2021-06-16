@@ -22,17 +22,17 @@ Tag.belongsToMany(Recipe, {
 Category.hasMany(Recipe);
 Recipe.belongsTo(Category);
 
-Recipe.belongsToMany(Ingredient, {
-    foreignKey: 'recipe_id',
-    through: 'recipe_ingredients',
-    timestamps: false,
-});
+// Recipe.belongsToMany(Ingredient, {
+//     foreignKey: 'recipe_id',
+//     through: 'recipe_ingredients',
+//     timestamps: false,
+// });
 
-Ingredient.belongsToMany(Recipe, {
-    foreignKey: 'ingredient_id',
-    through: 'recipe_ingredients',
-    timestamps: false,
-});
+// Ingredient.belongsToMany(Recipe, {
+//     foreignKey: 'ingredient_id',
+//     through: 'recipe_ingredients',
+//     timestamps: false,
+// });
 
 module.exports = {
     User,
