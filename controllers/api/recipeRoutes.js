@@ -75,6 +75,10 @@ router.post('/add', async (req, res) => {
             console.log(err);
             res.status(500).json(err);
         });
+    res.render('recipeAdd', {
+        user: req.session.user,
+        loggedIn: req.session.loggedIn,
+    });
 });
 
 module.exports = router;
