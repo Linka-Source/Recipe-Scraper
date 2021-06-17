@@ -5,7 +5,7 @@ const Category = require('./category');
 const Tag = require('./tag');
 
 User.hasMany(Recipe);
-Recipe.belongsTo(User);
+Recipe.belongsTo(User, { foreignKey: 'user_id', allowNull: false });
 
 Recipe.belongsToMany(Tag, {
     foreignKey: 'recipe_id',
