@@ -146,47 +146,27 @@
       </a></li>
   </ul>
   <div id="ingredients" class="tabcontent">
-    <h3 class="ingredients-dropdown">{{recipe.ingredients}}</h3>
+    <h3 class="ingredients-dropdown">Ingredients</h3>
     <ul>
-      <li>4 (6 ounce) fillets</li>
-      <li>salmon 2 tablespoons olive oil</li>
-      <li>2 tablespoons capers</li>
-      <li>1/8 teaspoon salt </li>
-      <li>1/8 teaspoon ground black pepper</li>
-      <li>4 slices lemon</li>
+      {{# each recipe.ingredients as |ingredient| }}
+      <li>{{ingredient.name}}</li>
+      {{/each}}
     </ul>
   </div>
   <div id="directions" class="tabcontent">
-    <h3>{{recipe.instructions}}</h3>
-    <p>Preheat a large heavy skillet over medium heat for 3 minutes. <br>
-      <br>
-      Coat salmon with olive oil. Place in skillet, and increase heat to high. Cook for 3 minutes. Sprinkle with capers, and salt and pepper. Turn salmon over, and cook for 5 minutes, or until browned. Salmon is done when it flakes easily with a fork.<br>
-      <br>
-      Transfer salmon to individual plates, and garnish with lemon slices.</p>
+    <h3>Method</h3>
+    <p>{{recipe.instructions}}<br>
+</p>
   </div>
   <div id="time" class="tabcontent">
-    <h3>{{recipe.cook_time}}</h3>
+    <h3>Cook Time</h3>
     <ul>
-      <li>10m preparation time</li>
-      <li>10m cooking time</li>
-      <li>20m total</li>
+      <li>{{recipe.cook_time}}</li>
     </ul>
   </div>
   <div id="serving" class="tabcontent">
-    <h3>{{recipe.serving_size}}</h3>
-    <p>This specific recipe serves up to four people. Adjust it accordingly to suit the specific needs of your party.</p>
-  </div>
-  <div id="nutrition" class="tabcontent">
-    <h3>Nutritional Value</h3>
-    <p><i>Based on a 2000 calorie diet</i></p>
-    <ul>
-      <li>Calories: 371 kcal 19%</li>
-      <li>Fat: 25.1 g 39%</li>
-      <li>Carbs: 1.7g 1%</li>
-      <li>Protein: 33.7 g 67%</li>
-      <li>Cholesterol: 99 mg 33%</li>
-      <li>Sodium: 300 mg 12%</li>
-    </ul>
+    <h3>Serving size</h3>
+    <p>{{recipe.serving_size}}</p>
   </div>
 </div>
 </body>
