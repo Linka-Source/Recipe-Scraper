@@ -5,16 +5,16 @@ const RecipeSeedData = [
         name: 'Quick flat breads with avocado & feta',
         description:
             "Jamie's quick flatbread recipe is perfect for whipping up at a moment's notice, and are really delicious served with avocado and feta, a great simple meal.",
-        ingredients: 
-            '1 teaspoon cumin seeds'
-            '250 g wholemeal self-raising flour , plus extra for dusting'
-            '¾ teaspoon baking powder'
-            '350 g plain yoghurt'
-            'olive oil'
-            '2 ripe avocados'
-            '75 g feta cheese'
-            '1 teaspoon rose harissa'
-        ,
+        ingredients:[ 
+            '1 teaspoon cumin seeds',
+            '250 g wholemeal self-raising flour , plus extra for dusting',
+            '¾ teaspoon baking powder',
+            '350 g plain yoghurt',
+            'olive oil',
+            '2 ripe avocados',
+            '75 g feta cheese',
+            '1 teaspoon rose harissa',
+        ],
         instructions: [
             'Lightly toast the cumin in a dry pan, then tip into a bowl.',
             'Add the flour, baking powder and seasoning with 250g of the yoghurt and mix together until you have a rough dough.',
