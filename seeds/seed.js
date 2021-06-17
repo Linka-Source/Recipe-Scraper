@@ -1,5 +1,5 @@
 const sequelize = require('../config/connection');
-const { User, Recipe } = require('../models');
+const { User, Recipe, Tag, Ingredient } = require('../models');
 const RecipeSeedData = require('./RecipeSeedData');
 const userData = require('./userData.json');
 
