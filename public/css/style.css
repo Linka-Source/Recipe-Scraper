@@ -27,6 +27,14 @@ h3 {
   line-height: 23px;
 }
 
+.directions {
+  list-style: disc;
+  margin-left: 20px;
+  line-height: 23px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
+}
+
 .wrapper {
   padding-top: 25px;
 }
@@ -104,8 +112,9 @@ ul.tab li a:hover {
   width: 476px;
   margin: auto;
 }
-.tabcontent li {
-  list-style-type: none;
+.tabcontent ul {
+  list-style: disc;
+  margin-left: 20px;
   line-height: 23px;
 }
 .tabcontent p {

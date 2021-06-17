@@ -1,4 +1,3 @@
-// For recipe.handlebars CSS styling
 
 function salmon(evt, recipe) {
 
