@@ -78,4 +78,11 @@ router.get('/recipe', (req, res) => {
     });
 });
 
+router.get('/recipe/add', (req, res) => {
+    res.render('recipeAdd', {
+        user: req.session.user,
+        loggedIn: req.session.loggedIn,
+    });
+});
+
 module.exports = router;

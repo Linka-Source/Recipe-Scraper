@@ -31,54 +31,41 @@ router.get('/', async (req, res) => {
 });
 
 router.post('/add', async (req, res) => {
-    const cat = req.body.category;
-    console.log('here');
-    var recipeData = null;
+    const category = req.body.category;
+    const recipeUrl = req.body.recipeUrl;
+    console.log({ category, recipeUrl });
+    let recipeData;
     // enter a supported recipe url as a parameter - returns a promise
     try {
         recipeData = await recipeScraper(req.body.recipeUrl);
         console.log(recipeData);
-
-        // save recipe data to model here.
-        // Recipe.create({
-        //     name: recipeData.name,
-        //     description: recipeData.description,
-        //     ingredients: recipeData.ingredients,
-        //     instructions: recipeData.instructions,
-        //     url: req.body.recipeUrl,
-        //     image: recipeData.image,
-        //     serving_size: recipeData.servings,
-        //     cook_time: recipeData.time.cook,
-        // })
-        //     .then((recipeData) => res.json(recipeData))
-        //     .catch((err) => {
-        //         console.log(err);
-        //         res.status(500).json(err);
-        //     });
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
     }
 
-    Recipe.create({
-        name: recipeData.name,
-        description: recipeData.description,
-        ingredients: JSON.stringify(recipeData.ingredients),
-        instructions: JSON.stringify(recipeData.instructions),
-        url: req.body.recipeUrl,
-        image: recipeData.image,
-        serving_size: recipeData.servings,
-        cook_time: recipeData.time.cook,
-    })
-        .then((recipeData) => res.json(recipeData))
-        .catch((err) => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-    res.render('recipeAdd', {
-        user: req.session.user,
-        loggedIn: req.session.loggedIn,
-    });
+    try {
+        const recipeCreated = await Recipe.create(
+            {
+                name: recipeData.name,
+                description: recipeData.description,
+                ingredients: recipeData.ingredients.map((i) => ({ name: i })),
+                instructions: recipeData.instructions.join(', '),
+                url: req.body.recipeUrl,
+                image: recipeData.image,
+                serving_size: recipeData.servings,
+                cook_time: recipeData.time.cook,
+            },
+            {
+                include: [Ingredient],
+            }
+        );
+
+        res.json(recipeCreated);
+    } catch (error) {
+        console.log(error);
+        res.status(500).json(error);
+    }
 });
 
 module.exports = router;
