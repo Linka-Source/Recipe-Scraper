@@ -33,13 +33,12 @@
       <div class="card-content">
         <div class="media">
           <div class="media-content">
-            <p class="title is-4">{{user.name}}</p>
-            <p class="subtitle is-6">something</p>
+            <p class="title is-4">{{recipe.name}}</p>
+            <p class="subtitle is-6">{{recipe.cook_time}}</p>
           </div>
         </div>
 
         <div class="content">
-          <h2>{{recipe.name}}</h2>
           <p>{{recipe.description}}</p>
           <br>
           <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
@@ -53,5 +52,5 @@
 </section>
 
 <div>
-  <button class="btn" type="submit"><a href="/recipe/add" class="create-txt">Create New Recipe</a></button>
+  <button class="btn" type="submit"><a href="/recipe-add" class="create-txt">Create New Recipe</a></button>
 </div>
