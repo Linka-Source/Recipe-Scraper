@@ -45,3 +45,9 @@ button:hover {
   background-color: #e9c480;
   color: #fff;
 }
+
+.trans{
+    opacity: 0.5;
+    color: black;
+}
+
