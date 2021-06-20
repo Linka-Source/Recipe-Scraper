@@ -4,6 +4,9 @@ const newFormHandler = async (event) => {
     // Collect values from the form
     const category = document.querySelector('[name="category"]').value;
     const recipeUrl = document.querySelector('[name="recipeURL"]').value;
+    const loadingIndicator = (toggle) => {
+        document.querySelector('#submitBtn').classList.toggle('spinner', toggle);
+    };
 
     if (!category && !recipeUrl) {
         console.log('missing cat or url');
@@ -25,7 +28,7 @@ const newFormHandler = async (event) => {
 
     if (response.ok) {
         // If successful, redirect the browser to the dashboard page
-        document.location.replace('/dashboard');
+        document.location.replace('./dashboard');
     } else {
         alert(response.statusText);
     }
