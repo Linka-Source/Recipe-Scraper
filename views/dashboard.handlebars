@@ -19,7 +19,7 @@
 <section class="container">
   <h2 class="title mt-6">Your Recipes</h2>
   
-  <div class="columns mt-2">
+  <div class="columns is-multiline mt-2">
     {{#each recipes as |recipe|}}
 
     <a class="card column is-5 mr-6" href="/recipe/{{recipe.id}}">
@@ -47,5 +47,5 @@
 </section>
 
 <div>
-  <button class="btn" type="submit"><a href="/recipe/add" class="create-txt">Create New Recipe</a></button>
+  <button class="btn" type="submit"><a href="/recipe-add" class="create-txt">Create New Recipe</a></button>
 </div>
