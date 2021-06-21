@@ -1,40 +1,42 @@
-body{
+/* body{
     background-image: url("https://image.freepik.com/free-photo/ingredients-cooking-placed-white-background_1220-3110.jpg");
     background-size:cover;  
-  }
-   
-  .bgbtn{
-    background-image: url("https://i1.wp.com/www.gastrostoria.com/wp-content/uploads/2019/07/commercial-food-photography-gastrostoria.jpg?resize=700%2C1050");
-    background-size: cover;
-    position: fixed; 
-  }
+  } */
 
-  h2 {
+.bgbtn {
+    background-image: url('https://i1.wp.com/www.gastrostoria.com/wp-content/uploads/2019/07/commercial-food-photography-gastrostoria.jpg?resize=700%2C1050');
+    background-size: cover;
+    position: fixed;
+}
+
+h2 {
     position: relative;
     padding: 0;
     margin: 0;
-    font-family: "Raleway", sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-weight: 300;
     font-size: 40px;
     color: #080808;
     -webkit-transition: all 0.4s ease 0s;
     -o-transition: all 0.4s ease 0s;
     transition: all 0.4s ease 0s;
-  }
-  
-  h2 span {
+}
+
+h2 span {
     display: block;
     font-size: 0.5em;
     line-height: 1.3;
-  }
-  h2 em {
+}
+h2 em {
     font-style: normal;
     font-weight: 600;
-  }
+}
 
 .ten h2 {
-    font-size:34px; font-weight:500; text-transform:uppercase;
-  }
+    font-size: 34px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
 
 .ten h2:before {
     background-color: #c50000;
@@ -44,10 +46,10 @@ body{
     height: 0.25rem;
     width: 42px;
     margin-bottom: 1.25rem;
-  }
+}
 
-.btn{
-    background-color: #4CAF50;
+/* .btn {
+    background-color: #4caf50;
     border: none;
     color: white;
     padding: 16px 32px;
@@ -57,33 +59,38 @@ body{
     font-size: 16px;
     margin: 4px 2px;
     -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-    cursor: pointer; 
-    color: black; 
+/* transition-duration: 0.4s;
+    cursor: pointer;
+    color: black;
     background-color: white;
     border: 2px solid #0e0f0f;
-    border-radius: 5px;
-} 
-
-button:hover {
-    background-color: #e9c480;
-    color: #fff;
-}
+    border-radius: 5px; */
+/* }  */
 
 .btn:hover {
-  background-color: #e9c480;
-  color: #fff;
+    background-color: #eef3fc;
+    color: #2160c4;
 }
 
-.trans{
+.navbar-menu,
+.navbar-brand {
+    background-color: #0075e2;
+}
+
+.btn {
+    background-color: #0075e2;
+    color: white;
+    transition: all 0.2s;
+    border: none;
+    outline: none;
+}
+
+.trans {
     opacity: 0.5;
     color: black;
-} 
+}
 
-
-
-
-  /* html {
+/* html {
     height: 100%;
   }
 
