@@ -1,18 +1,30 @@
 <head>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+  <link href="/css/login.css" rel="stylesheet">
   <link href="/css/styledash.css" rel="stylesheet">
+
 </head>
 <div class="container">
   <div class="flex justify-center">
-    <div class="w-full">
+    <div class="w-full md:w-1/2">
       <ul>
         <li class="title mt-6 trans txtcl">Name: {{user.name}}</li>
       </ul>
     <div class="flex justify-center">
-        <div class="w-full md:w-1/2">
-            <h2 class="title mt-6 trans">Your Account: <span class="member-name">{{user.name}}</span></h2>
+        <div class="w-full">
+            <h2 class="title mt-6 trans txtcl">Your Account: <a class="member-name"></a>{{user.name}}</h2>
         </div>
     </div>
+  </div>
+</div>
+
+<div>
+  <div class="container">
+  <div class="flex justify-center">
+    <div class="w-full md:w-1/2">
+    <button class="btn" type="submit"><a href="/recipe-add" class="create-txt">Create New Recipe</a></button>
+    </div>
+  </div>
   </div>
 </div>
 
@@ -45,7 +57,3 @@
     {{/each}}
   </div>
 </section>
-
-<div>
-  <button class="btn" type="submit"><a href="/recipe-add" class="create-txt">Create New Recipe</a></button>
-</div>

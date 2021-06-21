@@ -1,20 +1,20 @@
-body{
+/* body{
     background-image: url("https://kaleandcaramel.com/wp-content/uploads/2018/02/coconut-curry-lentils-pretty-simple-cooking-10.jpg");
     background-size: cover;
-  }
-   
-  .name{
+  } */
+
+.name {
     margin-right: 5px;
-  }
-  
-  .container{
+}
+
+.container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-  }
+}
 
-.btn{
-    background-color: #4CAF50;
+.btn {
+    background-color: #4caf50;
     border: none;
     color: white;
     padding: 16px 32px;
@@ -26,29 +26,36 @@ body{
     margin: 4px 2px;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
-    cursor: pointer; 
-    color: black; 
+    cursor: pointer;
+    color: black;
     background-color: white;
     border: 2px solid #0e0f0f;
     border-radius: 5px;
 }
 
 .create-txt {
-  color:black;
-}
-
-button:hover {
-    background-color: #e9c480;
-    color: #fff;
-}
-
-.btn:hover {
-  background-color: #e9c480;
-  color: #fff;
-}
-
-.trans{
-    opacity: 0.5;
     color: black;
 }
 
+.btn:hover {
+    background-color: #eef3fc;
+    color: #2160c4;
+}
+
+.navbar-menu,
+.navbar-brand {
+    background-color: #0075e2;
+}
+
+.btn {
+    background-color: #0075e2;
+    color: white;
+    transition: all 0.2s;
+    border: none;
+    outline: none;
+}
+
+.trans {
+    opacity: 0.5;
+    color: black;
+}
