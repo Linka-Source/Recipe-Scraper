@@ -1,10 +1,17 @@
+  <!-- Left Side Image -->
+<div class="columns is-mobile is-centered is-vcentered">
+  <div class="column image is-fullwidth">
+    <img src="https://rainbowplantlife.com/wp-content/uploads/2020/11/harissasoupflatlay2Ccropped2Cnewedit281of12928229.jpg" alt="">
+  </div>
+  <div class="column">
 <form class="recipeAdd-form">
- <h2>Create New Recipe</h2>
-<div class="field">
-  <label class="label">Categories</label>
+ <h2 class="title" style="margin-left:50px;">Create New Recipe</h2>
+<div class="field ">
+   <!-- Drop down category section-->
+  <label class="label is-subtitle" style="margin-left:50px;">Categories</label>
   <div class="control">
     <div class="select">
-      <select name="category">
+      <select name="category" style="margin-left:50px;">
         <option>Select a Category</option>
         <option>Meat</option>
         <option>Fruit</option>
@@ -15,22 +22,24 @@
   </div>
 </div>
 
+ <!-- Enter URL section -->
 <div class="field">
-  <label class="label">Enter a URL </label>
-  <div class="control">
-   <input id='recipeURL' name='recipeURL' type="url" class='input' placeholder="https://example.com" size='30'>
+  <label class="label" style="margin-left:50px;">Enter a URL </label>
+  <div class="control is-medium is-loading" style="width: 50%;">
+   <input id='recipeURL' name='recipeURL' type="url" class='input is-medium' placeholder="https://example.com" size='30' style="margin-left:50px;">
 </div>
 
-
-<div class="field is-grouped">
-  <div class="submitbtn" class="control">
+ <!-- Submit & cancel buttons -->
+<div class="field is-grouped" style="padding-top:15px; padding-left:50px;">
+  <div class="control">
     <button class="button is-link">Submit</button>
   </div>
   <div class="control">
     <button class="button is-link is-light">Cancel</button>
   </div>
 </div>
+</div>
 
 
-
+ <!-- Add Recipe JS -->
 <script src="/js/recipeAdd.js"></script>
