@@ -35,9 +35,9 @@ This application This application employs the following dependencies:
 Walkthrough video demonstrating how to use the application Recipe Scraper<br>
  * [Recipe Scraper Walkthrough Video](https://drive.google.com/file/d/1g3EdY965eK0A4Kjb9Jz4iH1g5SjZUAuC/view)
 <br>
-recipe scraper demo gif.gif
+![Alt Text](recipe-scraper-demo-gif.gif)
 
-29 MB GIF29 MB  — Click to open original
+
 
 ## Contributors
 Georgia Hunt 
