@@ -27,6 +27,10 @@ h3 {
     line-height: 23px;
 }
 
+.serving {
+  list-style: disc;
+}
+
 .directions {
     list-style: disc;
     margin-left: 20px;
@@ -166,3 +170,4 @@ button:hover {
 .navbar-brand {
     background-color: #0075e2;
 }
+

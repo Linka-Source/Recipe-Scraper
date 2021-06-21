@@ -20,12 +20,6 @@
                 <img src="https://github.com/GeorgiaHunt89/Star-Wars-App/blob/main/image/Untitled%20design.gif?raw=true" alt="recipe scraper logo"  width="250" alt="logo image"/>
                 <a class="navbar-item btn" href="/dashboard">
                 </a>
-                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
-                    data-target="navbarBasicExample">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </a>
             </div>
             <div id="navbarBasicExample" class="navbar-menu">
                 <div class="navbar-start">
@@ -34,7 +28,7 @@
                 </div>
                 <div class="navbar-end">
                 <div class="navbar-item">
-                <div class="buttons">
+                <div id="navbarBasicExample" class="buttons">
                     {{#unless loggedIn}}<a class="btn" href="/login"> <strong>Login</strong></a> / <a class="btn" href="/signup">Signup</a>
                     {{/unless}}
                     {{#if loggedIn}}<a class="btn" href="/logout" id="logout">Logout</a>{{/if}}
