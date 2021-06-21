@@ -8,7 +8,6 @@ Group Project 2
 * [Usage Information](#usage-information)
 * [Application Walk-through Video](#Application-Walk-through-Video)
 * [Contributors](#contributors)
-* [Test Instructions](#test-instructions)
 * [Deployment Link](#deployment-link)
 * [Questions](#questions)
 * [License](#license)
@@ -35,7 +34,9 @@ This application This application employs the following dependencies:
 Walkthrough video demonstrating how to use the application Recipe Scraper<br>
  * [Recipe Scraper Walkthrough Video](https://drive.google.com/file/d/1g3EdY965eK0A4Kjb9Jz4iH1g5SjZUAuC/view)
 <br>
- 
+
+![gif demo](https://user-images.githubusercontent.com/76650898/122739575-45b65e00-d2c2-11eb-862c-5d011753c972.gif)
+
 
 ## Contributors
 Georgia Hunt 
@@ -46,6 +47,8 @@ Paulinka Koczwara
 
 
 ## Deployment Link
+
+https://recipe-scraper-peg.herokuapp.com/
 
 
 ## Questions
