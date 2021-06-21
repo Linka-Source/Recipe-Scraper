@@ -1,12 +1,17 @@
+const loadingIndicator = (toggle) => {
+    document.querySelector('#submitBtn').classList.toggle('is-loading', toggle);
+};
+
 const newFormHandler = async (event) => {
     event.preventDefault();
+    document.querySelector('.message').innerHTML = '';
+
+    document.querySelector('#submitBtn').disabled = true;
 
     // Collect values from the form
     const category = document.querySelector('[name="category"]').value;
     const recipeUrl = document.querySelector('[name="recipeURL"]').value;
-    const loadingIndicator = (toggle) => {
-        document.querySelector('#submitBtn').classList.toggle('spinner', toggle);
-    };
+    loadingIndicator(true);
 
     if (!category && !recipeUrl) {
         console.log('missing cat or url');
@@ -24,13 +29,19 @@ const newFormHandler = async (event) => {
         },
     });
 
-    console.log(response);
+    const data = await response.json();
 
+    console.log(data);
+    loadingIndicator(false);
+    document.querySelector('#submitBtn').disabled = false;
     if (response.ok) {
-        // If successful, redirect the browser to the dashboard page
-        document.location.replace('./dashboard');
+        document.querySelector('.message').innerHTML = `
+            You have added your recipe to your library. <a href="/recipe/${data.id}">View Recipe</a>
+        `;
+        event.target.reset();
+        console.log('Success!');
     } else {
-        alert(response.statusText);
+        document.querySelector('.message').innerHTML = `<span class="color: red"> ${response.statusText}</span>`;
     }
 };
 
