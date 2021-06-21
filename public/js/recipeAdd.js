@@ -1,12 +1,14 @@
+const loadingIndicator = (toggle) => {
+    document.querySelector('#submitBtn').classList.toggle('spinner', toggle);
+};
+
 const newFormHandler = async (event) => {
     event.preventDefault();
 
     // Collect values from the form
     const category = document.querySelector('[name="category"]').value;
     const recipeUrl = document.querySelector('[name="recipeURL"]').value;
-    const loadingIndicator = (toggle) => {
-        document.querySelector('#submitBtn').classList.toggle('spinner', toggle);
-    };
+    loadingIndicator(true);
 
     if (!category && !recipeUrl) {
         console.log('missing cat or url');
@@ -25,10 +27,10 @@ const newFormHandler = async (event) => {
     });
 
     console.log(response);
-
+    loadingIndicator(false);
     if (response.ok) {
         // If successful, redirect the browser to the dashboard page
-        document.location.replace('./dashboard');
+        document.location.replace('/dashboard');
     } else {
         alert(response.statusText);
     }
